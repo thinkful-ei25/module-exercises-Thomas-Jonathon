@@ -30,6 +30,7 @@ const shoppingList = (function(){
   
   
   function generateShoppingItemsString(shoppingList) {
+    console.log(shoppingList);
     const items = shoppingList.map((item) => generateItemElement(item));
     return items.join('');
   }
