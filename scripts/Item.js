@@ -5,10 +5,11 @@ const Item = (function() {
   
   function validateName(name) {
     try {
-      if (name === undefined) throw 'Name does not exist';
+      if (name === '') throw 'item does not exist';
+      console.log(name);
     } 
     catch(err) {
-      console.log(err);
+      throw new Error(err);
     }
   }
   
