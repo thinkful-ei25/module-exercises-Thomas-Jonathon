@@ -2,21 +2,27 @@
 
 const Item = (function() {
   const foo = 'bar';
+  
+  function validateName(name) {
+    try {
+      if (name === undefined) throw 'Name does not exist';
+    } 
+    catch(err) {
+      console.log(err);
+    }
+  }
+  
+  const create = function(name) { 
+    return {
+      id: cuid(),
+      name: name,
+      checked: false,
+    };
+  };
+
   return {
-    item : 'test',
+    validateName,
+    create,
   };
 }());
 
-
-console.log(Item.item);
-console.log(foo);
-
-
-
-/*
-
-$(document).ready(function() {
-  shoppingList.bindEventListeners();
-  shoppingList.render();
-});
-*/
